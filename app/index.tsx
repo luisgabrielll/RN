@@ -9,7 +9,7 @@ const App = () => {
       <Text className="text-blue-500 font-pblack text-3xl"> Hello Worla </Text>
 
       <StatusBar style="auto" />
-      <Link href="profile">Go to profile</Link>
+      <Link href="/home">Go to home</Link>
     </View>
   );
 };
