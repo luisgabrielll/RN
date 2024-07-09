@@ -1,20 +1,24 @@
 import CustomButton from "@/components/CustomButton";
 import FormField from "@/components/FormField";
 import { images } from "@/constants";
+import { createUser } from "@/lib/appwrite";
+import { UserType } from "@/types/user-type";
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Dimensions, Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const SignUp = () => {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<UserType>({
     username: "",
     email: "",
     password: "",
   });
   const [isSubmitting, setSubmitting] = useState(false);
 
-  const submitForm = () => {};
+  const submitForm = () => {
+    createUser(form);
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
